@@ -159,6 +159,8 @@ This layout lets the unpacker stream the archive, recreate directories, restore 
     Subject to performance evaluation.
 
 * dockerize the project,
+* add unit tests for Packer
+* add more comprehensive integration tests covering all sorts of errors, e.g. filesystem access errors or corrupted archive format when unpacking,
 * profile and tune buffer sizes when reading files or hashing data
 * experiment with another approach to appending data
     
@@ -168,7 +170,6 @@ This layout lets the unpacker stream the archive, recreate directories, restore 
     * once to copy file's data into the archive when no duplicate is found
     Try reading the input file once to perform hashing and appending data in a single loop through file data chunks; read the file once more for full content comparison; rewind the output archive offset should a duplicate match occur. Outcome would be subject to input data characteristics, e.g. file sizes and frequency of duplicates.
 
-* add more comprehensive integration tests covering all sorts of errors, e.g. filesystem access errors or corrupted archive format when unpacking,
 * support other file types:
     - character and block devices
     - named pipes
